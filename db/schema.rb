@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408203232) do
+ActiveRecord::Schema.define(version: 20140408220444) do
 
   create_table "readings", force: true do |t|
-    t.integer  "sugar_level"
+    t.float    "sugar_level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

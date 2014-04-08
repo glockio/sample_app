@@ -6,7 +6,7 @@
 			<div class= 'small-4 columns form'>
 				<%= form_for @reading do |f| -%>
 				  <%= f.label :sugar_level, class: 'small-4-columns' %>
-				  <%= f.number_field :sugar_level, class: 'small-4-columns'  %>
+				  <%= f.number_field :sugar_level,step:0.01,class: 'small-4-columns'  %>
 				  <%= f.submit "Submit", :disable_with => 'Submiting...', class: 'button success'%>
 				<% end %>	
 			</div>

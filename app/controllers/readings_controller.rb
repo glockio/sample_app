@@ -3,7 +3,6 @@ class ReadingsController < ApplicationController
  	before_action :reading_params, only:[:create]
   
   def new
-  	flash[:success]="Hi"
   	@reading=Reading.new
   end
 
