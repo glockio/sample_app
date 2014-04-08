@@ -18,7 +18,7 @@ class ReadingsController < ApplicationController
   end
 
   def index
-  	@readings=Reading.all 
+  	@readings=Reading.order("created_at DESC")
   end
 
   private
