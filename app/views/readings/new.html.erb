@@ -1,0 +1,15 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1>Welcome to a basic App</h1>
+		<h3> To get started please enter your most recent sugar reading level in the form below</h3>
+		<div class="row">
+			<div class= 'small-4 columns form'>
+				<%= form_for @reading do |f| -%>
+				  <%= f.label :sugar_level, class: 'small-4-columns' %>
+				  <%= f.number_field :sugar_level, class: 'small-4-columns'  %>
+				  <%= f.submit "Submit", :disable_with => 'Submiting...', class: 'button success'%>
+				<% end %>	
+			</div>
+		</div>
+	</div>
+</div>
