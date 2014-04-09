@@ -4,5 +4,20 @@
 
 
 $(document).on 'page:change',->
-	$('.alert button').click ->
-		$(this).parent().hide()
+  navBar=$('.top-bar-section')
+
+  $('.alert').on 'click', 'button',(event)-> 
+    event.preventDefault()
+    $(this).parent().hide()
+
+  navBar.on 'click', 'li', ->
+    $('.top-bar-section').find('.active').removeClass('active')
+    $(this).addClass('active')
+
+ 
+
+ 
+  
+
+
+

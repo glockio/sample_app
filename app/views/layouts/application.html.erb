@@ -8,13 +8,20 @@
 </head>
 <body>
 	
-	<nav class= "top-bar">
-		<ul>
-			<li class="brand"> SmapleApp</li>
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "History", readings_path%></li>
-		</ul>
-	</nav>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "MySampleApp", root_path %></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="left">
+      <li class="active"><%= link_to "Home", root_path %></li>
+      <li><%= link_to "History", readings_path %></li>
+    </ul>
+  </section>
+</nav>
+
 	<% flash.each do |key, value| %>
 		<div class="alert alert-<%=key%> alert-dismissable">
 			<button type="button" class="close" >&times;</button> <!--Pages.js For close--> 

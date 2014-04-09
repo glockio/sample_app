@@ -1,5 +1,5 @@
 <%= form_for @reading do |f| -%>
   <%= f.label :sugar_level, class: 'small-4-columns' %>
   <%= f.number_field :sugar_level,step:0.01,class: 'small-4-columns'  %>
-  <%= f.submit @button, :disable_with => '#{@button}ing', class: 'button success'%>
+  <%= f.submit @button, :disable_with => "Processing...", class: 'button success'%>
 <% end %> 

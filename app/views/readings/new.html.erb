@@ -1,18 +1,18 @@
-<div class="jumbotron">
-	<div class="container">
+<div class="jumbotron center">
+	<div class="container text-center">
 		<h1>Welcome to a basic App</h1>
 		<h3> To get started please enter your most recent sugar reading level in the form below</h3>
 		<div class="row">
-			<div class= 'small-4 columns form'>
+			<div class= 'small-4 small-centered columns'>
         <%= render(partial: 'form', object:@button) %>
 			</div>
 		</div>
 	</div>
-  <div class="row">
-    <div class="small-8 columns">
-      <h3>Your 5 Most Recent Readings</h3>
-       <%= render(partial: 'reading', collection: @recent_readings) %>
-    </div>
+  <div class="row recent-reading text-center">
+      <div class="small-8 small-centered columns">
+         <h3>Your 5 Most Recent Readings</h3>
+          <%= render(partial: 'reading', collection: @recent_readings) %>
+      </div>    
   </div>
 </div>
 
