@@ -1,12 +1,8 @@
 <div class="row">
   <div class="small-8 columns readings-list">
     <ul>
-      <% @readings.each do |reading| %>
-      <li>
-          Sugar Level was "<%=reading.sugar_level%>", this reading is from <%= reading_time_helper(reading) %> ago <span> <%= link_to "Edit#", "#" %> |<%= link_to "Remove#", "#" %></span>
-      </li>
-      <% end %>
-      <li><%= link_to "Add New Reading#", "#", class: "button " %></li>
+      <%= render(partial: 'reading', collection: @readings) %>
+      <li><%= link_to "Add New Reading", new_reading_path, class: "button " %></li>
     </ul>
 
   </div>

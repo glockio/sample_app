@@ -1,0 +1,3 @@
+ <li>
+    Sugar Level was "<%=reading.sugar_level%>", this reading is from <%= reading_time_helper(reading) %> ago <span> <%= link_to "Edit", edit_reading_path(reading.id) %> |<%= link_to "Remove", reading, method: :delete %></span>
+</li>
