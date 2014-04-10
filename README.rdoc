@@ -1,28 +1,49 @@
-== README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    #**************************#
+    #********* Level 1 ********#
+    #**************************#
+#MODEL 
+class TodoModel Backbone.Model.extend 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+todoItem= new TodoModel({title: "You Can Set Attrs here when createing and instance"})
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+#VIEW
+class TodoView Backbone.View.extend 
+
+  render: -> 
+    some_html= "<h1> Hello From BackBone</h1>"
+    # or if you wanted to poplate hmtl with something more 
+    #dynamic  some_html couuld be
+    # some_html= this.model.get('title') => "You can set Attrs..."
+    $(this.el).html(some_html)
+    # This code says for what ever view instance you have created. find its el 
+    #Tag and inside it populate it with "some_hmtl" 
+
+
+
+# LOGIC/MISC
+todoView= new TodoView({ model: todoItem}) #Note it takes in instance of model 
+todoView.render() #This will populate this instance with the starte some_html
+console.log(todoView.el) #-> This would show you the populated el for this item 
+
+#Basic Getter and Setter Commands 
+todoView.get('title') #=> "You Can Set Atters Here"
+todoView.set({title: "The Title attr has now been changed"}) #=> Setting 
+
+
+#ADDING HTML TO DOM
+  todoView.render()   #this populates the todoView currently empty el (div by default)
+  $('#id-on-the-page').html(todoView.el) #this takes the now populated (compliments of .render()) and appends it to the DOM
+
+
+#InputWay Summary 
+ 1) In Main View create an instance of the Router class 
+ 2) The init method on the router class initalizes a new instance of the view 
+ 3) When the view is initalized it calls the render function on the new instance which populaes this.el 
+ 4) When a new view is initalized it also calls a 'position' function which then places the renderd html on 
+ page. This Creates The basic html for the user to now interact with 
+
+
+# GotChats On Events
+  For events the View Only watches what is INSIDE ITS .EL, SO ANY EVENT LISTNERS TAKING PLACE OUTSIDE WILL NOT FIRE
