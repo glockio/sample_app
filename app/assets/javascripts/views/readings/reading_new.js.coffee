@@ -5,7 +5,7 @@ class App.ReadingView extends Backbone.View
     @position()
 
   render: -> 
-    @.$el.html("<h1> What up Biches </h1> <button> Add Number</button>")  #WHY $(this.el), why not just this.el.html?? 
+    @.$el.html("<h1> What up World </h1> <button> Add Number</button>")  #WHY $(this.el), why not just this.el.html?? 
     console.log(@.el) 
   position: -> 
     $('#main-content').append(@.el)
@@ -28,7 +28,7 @@ class App.ReadingView extends Backbone.View
     else
       console.log("Not True")
       num= +$('#number-list li').last().text()
-      num+=1
+      num+=1 
       html_to_render= "<li>#{num}</li>"
       console.log(num)
       $('#number-list').append(html_to_render)

@@ -1,6 +1,6 @@
 InputHealthSampleApp::Application.routes.draw do
 
-  root 'readings#new'
+  root 'readings#index'
 
   resources :readings, except:[:show]
   # The priority is based upon order of creation: first created -> highest priority.
